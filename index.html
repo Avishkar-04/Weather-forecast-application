@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-cover bg-center" style="background-image: url('https://i.pinimg.com/736x/7b/80/03/7b800323c265dbf234d4005a7d9e626e.jpg');">
+  <div class="flex items-center justify-center min-h-screen bg-black bg-opacity-50">
+    <div class="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full space-y-6">
+
+      <!-- Title and Search Bar -->
+      <div class="text-center">
+        <h1 class="text-3xl font-semibold text-blue-600">Weather Forecast</h1>
+        <input type="text" id="city" placeholder="Enter city" class="mt-4 px-4 py-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <button id="search-btn" class="mt-4 px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none">Search</button>
+      </div>
+
+      <!-- Error Message -->
+      <div id="error-message" class="text-center text-red-500"></div>
+      
+      <!-- Current Weather Display -->
+      <div id="weather-details" class="hidden text-center">
+        <h2 class="text-2xl font-semibold" id="city-name"></h2>
+        <img id="weather-icon" class="mx-auto my-2 w-24 h-24" alt="" />
+        <p id="temperature" class="text-xl"></p>
+        <p id="humidity" class="text-sm"></p>
+        <p id="wind" class="text-sm"></p>
+      </div>
+
+      <!-- Extended Forecast Display Section -->
+<div id="forecast" class="hidden mt-6">
+    <h3 class="text-lg font-semibold text-center">5-Day Forecast</h3>
+    <div id="forecast-cards" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <!-- Forecast cards will be dynamically added here -->
+    </div>
+  </div>
+  <!-- Use Current Location Button -->
+<div class="text-center mt-6">
+    <button id="location-btn" class="bg-green-500 text-white p-2 rounded-md hover:bg-green-600">
+      Use Current Location
+    </button>
+  </div>
+  
+  <!-- Current Weather Section -->
+  <div id="current-weather" class="mt-6 hidden">
+    <h2 class="text-3xl font-semibold">Current Weather</h2>
+    <div class="flex items-center justify-center">
+      <img id="weather-icon" src="" alt="Weather Icon" class="w-24 h-24">
+      <div class="ml-4">
+        <p id="current-temp" class="text-2xl font-bold"></p>
+        <p id="current-condition"></p>
+        <p id="current-wind-speed"></p>
+        <p id="current-humidity"></p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 5-Day Forecast Section -->
+  <div id="forecast" class="mt-6 hidden">
+    <h2 class="text-3xl font-semibold">5-Day Forecast</h2>
+    <div id="forecast-cards" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4"></div>
+  </div>
+  
+  
+      <!-- Recently Searched Cities Dropdown -->
+      <div class="mt-4">
+        <label for="recent-cities" class="block text-sm font-medium">Recently Searched Cities:</label>
+        <select id="recent-cities" class="mt-2 w-full px-4 py-2 border rounded-md focus:outline-none">
+          <option value="" disabled selected>Select a city</option>
+        </select>
+      </div>
+      
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
